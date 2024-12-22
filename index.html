@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Focus Dashboard</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
@@ -14,6 +15,17 @@
       <button id="toggle">Start</button>
       <button id="reset">Reset</button>
     </div>
+
+    <div id="custom-intervals">
+      <label for="work-time">Work Time (minutes):</label>
+      <input type="number" id="work-time" min="1" max="60" value="25">
+
+      <label for="break-time">Break Time (minutes):</label>
+      <input type="number" id="break-time" min="1" max="60" value="5">
+
+      <button id="apply-intervals">Apply</button>
+    </div>
+
     <div id="task-category">
       <label for="category">Task Category:</label>
       <select id="category">
@@ -22,7 +34,14 @@
         <option value="Personal">Personal</option>
       </select>
     </div>
-    <canvas id="chart"></canvas>
+
+    <div id="stats">
+      <button id="daily-stats">View Daily Stats</button>
+      <button id="weekly-stats">View Weekly Stats</button>
+      <button id="monthly-stats">View Monthly Stats</button>
+    </div>
+
+    <canvas id="statsChart"></canvas>
   </div>
   <script src="script.js"></script>
 </body>
